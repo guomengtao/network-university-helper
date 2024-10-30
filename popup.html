@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 400px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+    .button-group {
+      margin-bottom: 15px;
+      display: flex;
+      gap: 10px;
+    }
+    .stats {
+      margin: 10px 0;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 4px;
+    }
+    .course-list {
+      margin: 10px 0;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .completed { color: #28a745; }
+    .incomplete { color: #dc3545; }
+    .homework { color: #ffc107; }
+    .course-item {
+      padding: 5px;
+      border-bottom: 1px solid #eee;
+    }
+    #stopAutoOpen {
+      background-color: #dc3545;
+      color: white;
+      display: none;
+    }
+    .timer {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0;
+      text-align: center;
+      color: #0066cc;
+      background: #e6f3ff;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+    .opened-count {
+      color: #0066cc;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-group">
+    <button id="checkCourses">检查课程</button>
+    <button id="autoOpen">自动打开未完成课程</button>
+    <button id="stopAutoOpen">停止自动打开</button>
+  </div>
+
+  <div id="timer" class="timer"></div>
+  
+  <h3>课程完成统计</h3>
+  <div class="stats">
+    <p>已完成课程：<span id="completed">0</span></p>
+    <p>未完成课程：<span id="incomplete">0</span></p>
+    <p>总课程数：<span id="total">0</span></p>
+    <p>本次已打开：<span id="openedCount" class="opened-count">0</span> 个课程</p>
+  </div>
+  
+  <h4 class="homework">作业列表：</h4>
+  <div id="homeworkList" class="course-list"></div>
+  
+  <h4 class="completed">已完成课程列表：</h4>
+  <div id="completedList" class="course-list"></div>
+  
+  <h4 class="incomplete">未完成课程列表：</h4>
+  <div id="incompleteList" class="course-list"></div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 
